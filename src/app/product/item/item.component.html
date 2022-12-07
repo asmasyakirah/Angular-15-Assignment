@@ -1,0 +1,28 @@
+<!-- <div class="product-item" [class.sale]="product.onSale">
+  <div class="image"><img [src]="product.image"></div>
+  <div class="details">
+    <div>{{product.name}}</div>
+    <div>$ {{product.price}}</div>
+    <div>
+      <span>{{product.quantityCurrent}}</span>
+      <button *ngIf="product.quantityCurrent>=0" (click)="removeFromCart()">+</button>
+      <button (click)="addToCart()">+</button>
+    </div>
+  </div>
+</div> -->
+
+<div class="stock-container">
+    <div class="product-image-div">
+        <img *ngIf="product.onSale" class="product-sale" src="/assets/sale-icon-2.png">
+        <img class="product-image" src="{{product.image}}">
+    </div>
+    <span style="font-weight: bold;">{{product.name}}</span>    
+    <br>
+    <span><small>RM </small>{{product.price | number:'1.2'}}</span>
+    <br>
+    <!-- <button class="min" (click)="removeFromCart(product)" *ngIf="!product.reachedMax()">-</button> -->
+    <button class="min" (click)="removeFromCart()" [disabled]="product.reachedMax()">-</button>
+    <span class="product-quantity-current">{{product.quantityCurrent}}</span>
+    <!-- <button class="add" (click)="addToCart(product)" *ngif="product.isAvailable()">+</button> ERROR HERE -->
+    <button class="add" (click)="addToCart()" [disabled]="!product.isAvailable()">+</button>
+</div>

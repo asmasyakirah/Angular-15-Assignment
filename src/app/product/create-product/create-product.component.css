@@ -1,0 +1,18 @@
+.product-create-container
+{
+    width: 100px;
+    height: 170px;
+    border: 0.5px solid grey;
+    border-radius: 7px;
+    display: inline-block;
+    padding: 7px;
+    margin: 7px;
+}
+
+.product-input
+{
+    width: 100%;
+    border: 1px solid lightgrey;
+    padding: 4px;
+    margin-bottom: 5px;
+}

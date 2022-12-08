@@ -1,0 +1,61 @@
+<h2>Add Product</h2>
+
+<div class="form-group product-create-container">
+  <form (ngSubmit)="createProduct(productForm)" #productForm="ngForm">
+    <div ngModelGroup="product">
+    <div class="product-name">
+      <input class="product-input" 
+             type="text"
+             placeholder="Name"
+             name="name"
+             ngModel
+             required>
+    <div class="product-price">
+      <input  class="product-input" 
+             type="number"
+             placeholder="Price"
+             name="price"
+             ngModel
+             required>
+    </div>
+    <div class="product-quantity">
+      <input class="product-input" 
+             type="number"
+             placeholder="Quantity"
+             name="quantity"
+             ngModel
+             required>
+    </div>
+    <div class="product-image">
+      <input class="product-input" 
+             type="text"
+             placeholder="Image"
+             name="image"
+             ngModel
+             required>
+    </div>  
+    <div class="product-sale">
+      <input    
+        type="checkbox"
+        name="sale"
+        ngModel/> On Sale
+    </div>
+    </div>
+    <button type="submit">Create</button><span style="font: red;" *ngIf="isInvalidForm">Invalid form</span>
+    </div>
+  </form>
+</div>
+
+<h4>Product details is {{product | json}}</h4>
+
+<!-- <div *ngIf="stockCode.dirty && stockCode.invalid">
+      <div *ngIf="stockCode.errors?.['required']">
+        Stock code is mandatory
+      </div>
+      <div *ngIf="stockCode.errors?.['minlength']">
+        Stock code must be at least length 2
+      </div>
+    </div> -->
+    <!-- <div *ngIf="stockPrice.dirty && stockPrice.invalid">
+      Stock price is mandatory
+    </div> -->

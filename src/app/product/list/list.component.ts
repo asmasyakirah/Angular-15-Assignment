@@ -6,6 +6,7 @@ import { ProductQuantityChange } from 'src/app/model/product-quantity-change';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit{
 
